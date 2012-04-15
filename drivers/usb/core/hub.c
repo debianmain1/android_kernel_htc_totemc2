@@ -2184,7 +2184,6 @@ static int hub_port_reset(struct usb_hub *hub, int port1,
 				struct usb_device *udev, unsigned int delay)
 {
 	int i, status;
-	struct usb_hcd *hcd;
 
 	hcd = bus_to_hcd(udev->bus);
 	/* Block EHCI CF initialization during the port reset.
@@ -3525,8 +3524,8 @@ static void hub_events(void)
 	struct device *hub_dev;
 	u16 hubstatus;
 	u16 hubchange;
-	u16 portstatus;
-	u16 portchange;
+	u16 portstatus = 0;
+	u16 portchange = 0;
 	int i, ret;
 	int connect_change;
 #if defined(CONFIG_USB_PEHCI_HCD) || defined(CONFIG_USB_PEHCI_HCD_MODULE)

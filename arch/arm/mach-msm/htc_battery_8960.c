@@ -561,6 +561,7 @@ static void cable_status_notifier_func(enum usb_connect_type online)
 #else
 		BATT_LOG("USB charger");
 		htc_charger_event_notify(HTC_CHARGER_EVENT_SRC_USB);
+#endif
 		break;
 	case CONNECT_TYPE_AC:
 		BATT_LOG("5V AC charger");
