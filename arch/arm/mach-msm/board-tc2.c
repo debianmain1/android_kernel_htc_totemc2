@@ -2657,7 +2657,7 @@ static struct i2c_board_info msm_i2c_syn_gsbi3_info[] __initdata = {
 
 static void syn_init_vkeys_tc2(void)
 {
-	int rc;
+	int rc = 0;
 	static struct kobject *syn_properties_kobj;
 
 	syn_properties_kobj = kobject_create_and_add("board_properties", NULL);
