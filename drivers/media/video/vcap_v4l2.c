@@ -284,7 +284,7 @@ static int vidioc_s_fmt_vid_cap(struct file *file, void *priv,
 #endif
 	struct vcap_client_data *c_data = file->private_data;
 
-	switch (f->type) {
+	switch ((int)(f->type)) {
 	case V4L2_BUF_TYPE_VIDEO_CAPTURE:
 #ifdef NEW_S_FMT
 		vc_format = (struct v4l2_format_vc_ext *) f->fmt.raw_data;
