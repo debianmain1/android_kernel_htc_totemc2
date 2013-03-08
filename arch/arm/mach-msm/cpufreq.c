@@ -259,18 +259,18 @@ int msm_cpufreq_set_freq_limits(uint32_t cpu, uint32_t min, uint32_t max)
 	if (!limit->limits_init)
 		msm_cpufreq_limits_init();
 
-	if ((min != MSM_CPUFREQ_NO_LIMIT) &&
-		min >= limit->min && min <= limit->max)
+//	if ((min != MSM_CPUFREQ_NO_LIMIT) &&
+//		min >= limit->min && min <= limit->max)
 		limit->allowed_min = min;
-	else
-		limit->allowed_min = limit->min;
+//	else
+//		limit->allowed_min = limit->min;
 
 
-	if ((max != MSM_CPUFREQ_NO_LIMIT) &&
-		max <= limit->max && max >= limit->min)
+//	if ((max != MSM_CPUFREQ_NO_LIMIT) &&
+//		max <= limit->max && max >= limit->min)
 		limit->allowed_max = max;
-	else
-		limit->allowed_max = limit->max;
+//	else
+//		limit->allowed_max = limit->max;
 
 	pr_debug("%s: Limiting cpu %d min = %d, max = %d\n",
 			__func__, cpu,
