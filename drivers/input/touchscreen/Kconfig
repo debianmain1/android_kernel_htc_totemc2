@@ -837,34 +837,4 @@ config TOUCHSCREEN_FT5X06
          To compile this driver as a module, choose M here: the
          module will be called ft5x06_ts.
 
-config TOUCHSCREEN_SYNAPTICS_3K
-	tristate "Synaptics 3k serious i2c touchscreen"
-	depends on I2C
-	help
-	  This enables support for Synaptics RMI4 over I2C based touchscreens.
-	  
-config TOUCHSCREEN_SYNAPTICS_SWEEP2WAKE
-        tristate "Sweep2Wake for SYNAPTICS_3k based touchscreens"
-        default y
-          
-config TOUCHSCREEN_SYNAPTICS_SWEEP2WAKE_START
-	depends on TOUCHSCREEN_SYNAPTICS_SWEEP2WAKE
-	string "Sweep2Wake start button name"
-	default "BACK"
-
-config TOUCHSCREEN_SYNAPTICS_SWEEP2WAKE_END
-	depends on TOUCHSCREEN_SYNAPTICS_SWEEP2WAKE
-	string "Sweep2Wake end button name"
-	default "MENU"
-	
-config TOUCHSCREEN_MAX11871
-        tristate "Maxim max11871 touchscreen"
-        depends on I2C
-        help
-          Say Y here if you have a Maxim max11871 touchscreen connected
-          to your system. max11871 conforms to the Maxim Touch Protocol
-          (MTP) defined by Maxim.
-
-          If unsure, say N.
-
 endif
